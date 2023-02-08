@@ -20,6 +20,7 @@ const randomNumberTwo = Math.random();
 
 console.log(randomNumber);
 console.log(randomNumberTwo);
+
 if (
   (randomNumber >= 0.7 && randomNumberTwo >= 0.7) ||
   randomNumber <= 0.2 ||
