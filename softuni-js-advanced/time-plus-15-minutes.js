@@ -5,23 +5,31 @@
 function time(params) {
   let hourInput = Number(params[0]);
   let minutesInput = Number(params[1]);
-  let minutesAddition = 15;
-  let minutes = minutesInput + minutesAddition;
+  let minutesToAdd = 15;
+
+  let minutes = minutesInput + minutesToAdd;
+  let minutesFormatted = minutes;
 
   if (minutes > 59) {
-    hourInput += 1;
+    hourInput++;
     minutes = minutes % 60;
   }
+
   if (minutes < 10) {
-    minutes = "0" + minutes;
+    minutesFormatted = "0" + minutes;
   }
+
   if (hourInput > 23) {
     hourInput = 0;
   }
 
-  console.log(hourInput + ":" + minutes);
+  console.log(hourInput + ":" + minutesFormatted);
 }
 
 // time(["1", "46"]);
 // time(["0", "01"]);
-time(["23", "59"]);
+// time(["23", "59"]);
+// time(["23", "19"]);
+// time(["12", "49"]);
+// time(["0", "0"]);
+time(["1", "45"]);

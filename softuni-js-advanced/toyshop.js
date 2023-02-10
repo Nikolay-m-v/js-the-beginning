@@ -33,8 +33,6 @@ function toyShop(params) {
     eachTeddyBear * amountOfTeddyBears +
     eachMinion * amountOfMinions +
     eachTruck * amountOfTrucks;
-  console.log(totalSum);
-  console.log(totalToysOrdered);
 
   if (totalToysOrdered > 50) {
     totalSum = totalSum - totalSum * 0.25;
@@ -45,19 +43,16 @@ function toyShop(params) {
   let totalSumAfterRent = totalSum - rent;
   let totalSumAfterRentAndVacation = totalSumAfterRent - priceOfVacation;
 
-  console.log(totalSum);
-  console.log(totalSumAfterRent);
-
-  if (totalSumAfterRent > priceOfVacation) {
+  if (totalSumAfterRentAndVacation >= 0) {
     console.log("Yes! " + totalSumAfterRentAndVacation + " lv left.");
   }
 
-  if (totalSumAfterRent < priceOfVacation) {
+  if (totalSumAfterRentAndVacation < 0) {
     console.log(
       "Not enough money! " + totalSumAfterRentAndVacation + " lv needed."
     );
   }
 }
 
-// toyShop(["40.8", "20", "25", "30", "50", "10"]);
+toyShop(["40.8", "20", "25", "30", "50", "10"]);
 toyShop(["320", "8", "2", "5", "5", "1"]);

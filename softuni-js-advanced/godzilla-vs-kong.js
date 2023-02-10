@@ -11,30 +11,28 @@ function movieBudget(params) {
 
   let totalPriceForEquipmentForEachExtra =
     amountOfExtraPeople * pricePerEquipmentForEachExtra;
-  console.log(totalPriceForEquipmentForEachExtra);
 
   if (amountOfExtraPeople > 150) {
-    totalPriceForEquipmentForEachExtra =
-      totalPriceForEquipmentForEachExtra -
+    totalPriceForEquipmentForEachExtra -=
       totalPriceForEquipmentForEachExtra * 0.1;
   }
 
   let totalSumForMovie = totalPriceForEquipmentForEachExtra + sumForDecoration;
   let moneyLeft = totalBudget - totalSumForMovie;
 
-  console.log(sumForDecoration);
-  console.log(totalPriceForEquipmentForEachExtra);
-  console.log(totalSumForMovie);
-
-  if (totalSumForMovie < 20000) {
+  if (totalSumForMovie < totalBudget) {
     console.log(
-      "Action! Wingard starts filming with " + moneyLeft + " leva left."
+      "Action! Wingard starts filming with " +
+        Math.abs(moneyLeft) +
+        " leva left."
     );
   }
-  if (totalSumForMovie > 20000) {
-    console.log("Not enough money! Wingard needs " + moneyLeft + " leva more.");
+  if (totalSumForMovie > totalBudget) {
+    console.log(
+      "Not enough money! Wingard needs " + Math.abs(moneyLeft) + " leva more."
+    );
   }
 }
 // movieBudget(["20000", "120", "55.5"]);
-movieBudget(["15437.62", "186", "57.99"]);
-// movieBudget(["9587.88", "222", "55.68"]);
+// movieBudget(["15437.62", "186", "57.99"]);
+movieBudget(["9587.88", "222", "55.68"]);
