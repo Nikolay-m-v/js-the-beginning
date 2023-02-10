@@ -10,10 +10,6 @@ function sumSeconds(params) {
   let remainder = totalSum % 60;
   let minutes = (totalSum - remainder) / 60;
 
-  console.log(totalSum);
-  console.log(remainder);
-  console.log(minutes);
-
   if (remainder < 10) {
     remainder = "0" + remainder;
   }
