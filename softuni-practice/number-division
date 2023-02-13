@@ -27,4 +27,4 @@ function numberDivision(params) {
   }
 }
 
-numberDivision(["1643"]);
+numberDivision(["50"]);

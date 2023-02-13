@@ -47,4 +47,4 @@ function vacation(amountOfClients, typeOfGroup, dayOfStay) {
   console.log("Total price: " + totalSum.toFixed(2));
 }
 
-vacation(100, "Business", "Sunday");
+vacation(10, "Students", "Friday");
