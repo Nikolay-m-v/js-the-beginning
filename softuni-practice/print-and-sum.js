@@ -13,3 +13,20 @@ function printAndSum(firstNumber, secondNumber) {
 printAndSum(5, 10);
 printAndSum(0, 26);
 printAndSum(50, 60);
+
+////////////// same function using arrays
+//  function printAndSum(params) {
+//   let firstNumber = Number(params[0]);
+//   let secondNumber = Number(params[1]);
+//   let sum = 0;
+
+//   for (let i = firstNumber; i <=secondNumber; i++) {
+//     sum += i;
+//     console.log(i);
+//   }
+//   console.log(sum);
+// }
+
+// printAndSum([5, 10]);
+// printAndSum([0, 26]);
+// printAndSum([50, 60]);
