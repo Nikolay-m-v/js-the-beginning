@@ -1,5 +1,7 @@
 "use strict";
 
+// Да се напише функция, която получава число n и печата четните степени на 2 ≤ 2n: 20, 22, 24, 26, …, 2n.
+
 function powerOfTwoEven(lines) {
   let power = Number(lines[0]);
 
