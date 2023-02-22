@@ -1,5 +1,7 @@
 "use strict";
 
+// Напишете функция, която получава число n и отпечатва числата от 1 до n през 3.
+
 function oneToNByThree(input) {
   let n = Number(input[0]);
 
