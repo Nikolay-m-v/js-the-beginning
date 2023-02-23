@@ -10,6 +10,7 @@ function sumNumbers(input) {
     sum += n % 10;
     n = Math.floor(n / 10);
   }
+
   console.log(sum);
 }
 
