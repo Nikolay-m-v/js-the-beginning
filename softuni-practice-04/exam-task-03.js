@@ -10,7 +10,6 @@
 function salary(input) {
   let amountOfOpenTabs = Number(input[0]);
   let salary = Number(input[1]);
-  let websiteOpen = String(input[2]);
   let facebookTax = 150;
   let instagramTax = 100;
   let redditTax = 50;
