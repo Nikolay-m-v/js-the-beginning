@@ -6,12 +6,44 @@
 // Ако резултатът в някой момент надхвърли 1250.5 програмата трябва да прекъсне и да се отпечата, че дадения актьор е получил номинация.
 
 function oscars(input) {
-  let name = String(input[0]);
-  let pointsInAcademy = Number(input[1]);
-  let amountOfPeopleEvulating = Number(input[2]);
+  let index = 0;
+  let nameActor = input[index++];
+  let pointsActor = Number(input[index++]);
+  let numberJudges = Number(input[index++]);
+  let points = 0;
 
-  for (let i = 1; i <= input.length; i++) {
-    let currentEvulatorOrPointsGivenByEvulator = input[i];
-    console.log(str.currentEvulatorOrPointsGivenByEvulator);
+  for (let i = 0; i < numberJudges; i++) {
+    let judge = input[index++];
+    let pointsJudge = Number(input[index++]);
+    points = (judge.length * pointsJudge) / 2;
+    pointsActor += points;
+    if (pointsActor > 1250.5) {
+      break;
+    }
+  }
+
+  let diff = Math.abs(pointsActor - 1250.5);
+
+  if (pointsActor > 1250.5) {
+    console.log(
+      `Congratulations, ${nameActor} got a nominee for leading role with ${pointsActor.toFixed(
+        1
+      )}!`
+    );
+  } else {
+    console.log(`Sorry, ${nameActor} you need ${diff.toFixed(1)} more!`);
   }
 }
+oscars([
+  "Zahari Baharov",
+  "205",
+  "4",
+  "Johnny Depp",
+  "45",
+  "Will Smith",
+  "29",
+  "Jet Lee",
+  "10",
+  "Matthew Mcconaughey",
+  "39",
+]);
