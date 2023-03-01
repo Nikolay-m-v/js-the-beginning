@@ -47,3 +47,19 @@ oscars([
   "Matthew Mcconaughey",
   "39",
 ]);
+
+oscars([
+  "Sandra Bullock",
+  "340",
+  "5",
+  "Robert De Niro",
+  "50",
+  "Julia Roberts",
+  "40.5",
+  "Daniel Day-Lewis",
+  "39.4",
+  "Nicolas Cage",
+  "29.9",
+  "Stoyanka Mutafova",
+  "33",
+]);
