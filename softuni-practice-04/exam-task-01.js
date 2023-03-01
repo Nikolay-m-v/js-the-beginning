@@ -10,7 +10,6 @@ function examTaskOne(input) {
   let amountOfNumbers = Number(input[0]);
 
   let numbersInRangeOne = 0;
-
   let numbersInRangeTwo = 0;
   let numbersInRangeThree = 0;
   let numbersInRangeFour = 0;
