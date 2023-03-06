@@ -6,15 +6,15 @@
 // Ако резултатът в някой момент надхвърли 1250.5 програмата трябва да прекъсне и да се отпечата, че дадения актьор е получил номинация.
 
 function oscars(input) {
-  let index = 0;
-  let nameActor = input[index++];
-  let pointsActor = Number(input[index++]);
-  let numberJudges = Number(input[index++]);
+  let pointer = 0;
+  let actorName = input[pointer++];
+  let pointsActor = Number(input[pointer++]);
+  let judges = Number(input[pointer++]);
   let points = 0;
 
-  for (let i = 0; i < numberJudges; i++) {
-    let judge = input[index++];
-    let pointsJudge = Number(input[index++]);
+  for (let i = 0; i < judges; i++) {
+    let judge = input[pointer++];
+    let pointsJudge = Number(input[pointer++]);
     points = (judge.length * pointsJudge) / 2;
     pointsActor += points;
     if (pointsActor > 1250.5) {
@@ -26,14 +26,19 @@ function oscars(input) {
 
   if (pointsActor > 1250.5) {
     console.log(
-      `Congratulations, ${nameActor} got a nominee for leading role with ${pointsActor.toFixed(
-        1
-      )}!`
+      "Congratulations, " +
+        actorName +
+        " got a nominee for leading role with " +
+        pointsActor +
+        "!"
     );
   } else {
-    console.log(`Sorry, ${nameActor} you need ${diff.toFixed(1)} more!`);
+    console.log(
+      "Sorry, " + actorName + " you need " + diff.toFixed(2) + " more!"
+    );
   }
 }
+
 oscars([
   "Zahari Baharov",
   "205",
