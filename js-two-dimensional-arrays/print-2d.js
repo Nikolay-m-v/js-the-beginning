@@ -5,8 +5,9 @@
 
 function print2d(input) {
   for (let i = 0; i < input.length; i++) {
+    let subarray = input[i];
     for (let j = 0; j < input[i].length; j++) {
-      console.log(input[i][j]);
+      console.log(subarray[j]);
     }
   }
 }
