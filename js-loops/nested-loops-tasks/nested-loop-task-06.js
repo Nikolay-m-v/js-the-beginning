@@ -8,3 +8,24 @@
 // На последният етаж винаги има апартаменти и те са по-големи от останалите, за това пред номера им пише 'L', вместо 'А'.
 // Ако има само един етаж, то има само големи апартаменти!
 // Функцията получава масив от две цели числа - броят на етажите и броят на стаите за един етаж.
+
+function building(input) {
+  let floors = input[0];
+  let rooms = input[1];
+
+  for (let i = floors; i > 0; i--) {
+    let string = "";
+    for (let n = 0; n < rooms; n++) {
+      if (i === floors) {
+        string += " L" + i + n;
+      } else if (i % 2 === 0) {
+        string += " O" + i + n;
+      } else {
+        string += " A" + i + n;
+      }
+    }
+    console.log(string);
+  }
+}
+
+building(["6", "4"]);
