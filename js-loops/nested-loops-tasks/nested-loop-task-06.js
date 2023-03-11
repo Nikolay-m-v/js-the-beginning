@@ -29,3 +29,5 @@ function building(input) {
 }
 
 building(["6", "4"]);
+building(["9", "5"]);
+building(["4", "4"]);
