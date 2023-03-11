@@ -20,13 +20,13 @@ function trip(input) {
     target = Number(input[index++]);
     let budget = 0;
     while (budget < target) {
-      let money = Number(input[index++]);
-      budget += money;
+      let savings = Number(input[index++]);
+      budget += savings;
       if (budget >= target) {
         console.log("Going to " + destination + "!");
         break;
       }
-      money = input[index];
+      savings = input[index];
     }
     command = input[index++];
   }
