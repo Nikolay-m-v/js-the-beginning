@@ -11,30 +11,42 @@
 
 function trip(input) {
   let index = 0;
-  let destination = input[index++];
-  let minimumBudgetRequired = Number(input[index++]);
-  let savings = Number(input[index++]);
+  let destination = "";
+  let command = input[index++];
+  let target = 0;
 
-  for (let i = 2; i < input.length; i++) {
-    savings += Number(input[index]);
-    if (input[index++] === "Spain") {
-      destination = String(input[index]);
-      savings = 0;
-      for (let i = 8; i < input.length; i++) {
-        minimumBudgetRequired = Number(input[index]);
-        savings += Number(input[index++]);
-        console.log(savings);
+  while (command !== "End") {
+    destination = command;
+    target = Number(input[index++]);
+    let budget = 0;
+    while (budget < target) {
+      let money = Number(input[index++]);
+      budget += money;
+      if (budget >= target) {
+        console.log("Going to " + destination + "!");
+        break;
       }
+      money = input[index];
     }
+    command = input[index++];
   }
-  if (savings >= minimumBudgetRequired) {
-    console.log("Going to greece!");
-  }
-
-  console.log(destination);
-  console.log(minimumBudgetRequired);
-  console.log(savings);
 }
+
+// for (let i = 2; i < input.length; i++) {
+//   savings += Number(input[index]);
+//   if (input[index++] === "Spain") {
+//     destination = String(input[index]);
+//     savings = 0;
+//     for (let i = 8; i < input.length; i++) {
+//       minimumBudgetRequired = Number(input[index]);
+//       savings += Number(input[index++]);
+//       console.log(savings);
+//     }
+//   }
+// }
+// if (savings >= minimumBudgetRequired) {
+//   console.log("Going to greece!");
+// }
 
 trip([
   "Greece",
@@ -54,48 +66,28 @@ trip([
   "End",
 ]);
 
-// function travelling(input) {
-//   let index = 0;
-//   let command = input[index++];
-
-//   while (command !== "End") {
-//     destination = command;
-//     target = Number(input[index++]);
-//     let budget = 0;
-//     while (budget < target) {
-//       let money = Number(input[index++]);
-//       budget += money;
-//       if (budget >= target) {
-//         console.log(`Going to ${destination}!`);
-//         break;
-//       }
-//       money = input[index];
-//     }
-//     command = input[index++];
-//   }
-// }
-// travelling([
-//   "France",
-//   "2000",
-//   "300",
-//   "300",
-//   "200",
-//   "400",
-//   "190",
-//   "258",
-//   "360",
-//   "Portugal",
-//   "1450",
-//   "400",
-//   "400",
-//   "200",
-//   "300",
-//   "300",
-//   "Egypt",
-//   "1900",
-//   "1000",
-//   "280",
-//   "300",
-//   "500",
-//   "End",
-// ]);
+trip([
+  "France",
+  "2000",
+  "300",
+  "300",
+  "200",
+  "400",
+  "190",
+  "258",
+  "360",
+  "Portugal",
+  "1450",
+  "400",
+  "400",
+  "200",
+  "300",
+  "300",
+  "Egypt",
+  "1900",
+  "1000",
+  "280",
+  "300",
+  "500",
+  "End",
+]);
