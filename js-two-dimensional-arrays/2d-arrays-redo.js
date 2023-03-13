@@ -3,9 +3,9 @@
 // Write a function `print2d` that accepts a two-dimensional array as an argument. The function
 // should print all inner elements of the array.
 
-function print2d() {
-  for (let i = 0; i < array1.length; i++) {
-    let subarray = array1[i];
+function print2d(input) {
+  for (let i = 0; i < input.length; i++) {
+    let subarray = input[i];
     for (let j = 0; j < subarray.length; j++) {
       console.log(subarray[j]);
     }
