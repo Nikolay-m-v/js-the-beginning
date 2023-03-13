@@ -8,9 +8,11 @@ function twoSumPairs(numbers, target) {
   let rows = [];
 
   for (let i = 0; i < numbers.length; i++) {
-    for (let j = 0 + 1; j < numbers.length; j++) {
-      if (numbers[i] + numbers[j] === target) {
-        let pair = [numbers[i], numbers[j]];
+    let num1 = numbers[i];
+    for (let j = i + 1; j < numbers.length; j++) {
+      let num2 = numbers[j];
+      if (num1 + num2 === target) {
+        let pair = [num1, num2];
         rows.push(pair);
       }
     }
