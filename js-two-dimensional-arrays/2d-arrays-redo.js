@@ -39,7 +39,7 @@ print2d(array2);
 //  42
 //  100
 
-// TASK 2
+///////////////////    TASK 2
 
 // Write a function `makeMatrix(m, n, value)` that accepts three arguments. The function should return
 // a 2-dimensional array of height `m` and width `n` that contains the `value` as every element.
@@ -77,3 +77,32 @@ console.log(makeMatrix(2, 2, 0));
 //   [ 0, 0 ],
 //   [ 0, 0 ]
 // ]
+
+/////////////////// TASK 3
+
+// Write a function `totalProduct(array)` that accepts a 2D array of numbers. The function should return
+// the total product of all numbers in the array.
+
+function totalProduct(input) {
+  let result = 1;
+  for (let i = 0; i < input.length; i++) {
+    let taskThreeSubarray = input[i];
+    for (let j = 0; j < taskThreeSubarray.length; j++) {
+      result *= taskThreeSubarray[j];
+    }
+  }
+  return result;
+}
+
+let taskThreeArray1 = [
+  [3, 5, 2],
+  [6, 2],
+];
+console.log(totalProduct(taskThreeArray1)); // 360
+
+let taskThreeArray2 = [
+  [4, 6],
+  [2, 3],
+  [1, 2],
+];
+console.log(totalProduct(taskThreeArray2)); // 288
