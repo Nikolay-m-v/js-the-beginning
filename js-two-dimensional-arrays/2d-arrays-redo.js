@@ -131,3 +131,39 @@ console.log(twoSumPairs([2, 3, 4, 6, 5], 8)); // [ [2, 6], [3, 5] ]
 console.log(twoSumPairs([10, 7, 4, 5, 2], 12)); // [ [10, 2], [7, 5] ]
 console.log(twoSumPairs([3, 9, 8], 11)); // [ [3, 8] ]
 console.log(twoSumPairs([3, 9, 8], 10)); // [ ]
+
+////////////////// TASK 5
+
+// Write a function `zipper` that accepts two arrays as arguments. The function should return a 2D
+// array containing pairs of elements at the same indices. You can assume that the arrays have the
+// same length.
+
+function zipper(taskFiveArray1, taskFiveArray2) {
+  let array = [];
+  for (let i = 0; i < taskFiveArray1.length; i++) {
+    let el1 = taskFiveArray1[i];
+    let el2 = taskFiveArray2[i];
+    let pair = [taskFiveArray1[i], taskFiveArray2[i]];
+    array.push(pair);
+  }
+  return array;
+}
+
+let taskFiveArray1 = ["a", "b", "c", "d"];
+let taskFivearray2 = [-1, -2, -3, -4];
+console.log(zipper(taskFiveArray1, taskFivearray2));
+// [
+//   ['a', -1],
+//   ['b', -2],
+//   ['c', -3],
+//   ['d', -4],
+// ]
+
+let array3 = ["whisper", "talk", "shout"];
+let array4 = ["quiet", "normal", "loud"];
+console.log(zipper(array3, array4));
+// [
+//   ['whisper', 'quiet'],
+//   ['talk', 'normal'],
+//   ['shout', 'loud'],
+// ]
