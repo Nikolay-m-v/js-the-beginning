@@ -33,3 +33,5 @@ function specialNumbers(input) {
 }
 
 specialNumbers(["3"]);
+specialNumbers(["11"]);
+specialNumbers(["16"]);
