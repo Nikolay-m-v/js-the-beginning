@@ -23,7 +23,7 @@ function numberPositionAndSum(input) {
       }
     }
     if (evenSum === oddSum) {
-      printLine += i;
+      printLine += `${i} `;
     }
   }
   console.log(printLine);
