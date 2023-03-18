@@ -24,6 +24,7 @@ function numberPyramid(n) {
 
 numberPyramid([7]);
 numberPyramid([15]);
+numberPyramid([24]);
 
 // let current = 1;
 // let isBigger = false;
