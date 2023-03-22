@@ -59,3 +59,5 @@ footballTournament([
   "W",
   "W",
 ]);
+footballTournament(["Barcelona", "7", "W", "D", "L", "L", "W", "W", "D"]);
+footballTournament(["Chelsea", "0"]);
