@@ -16,6 +16,7 @@ function cinemaVouchers(input) {
   let counter = 0;
   let counterTwo = 0;
   let moneyLeft = 0;
+  let stop = false;
 
   while (command !== "End") {
     let movieName = command;
@@ -37,6 +38,10 @@ function cinemaVouchers(input) {
         let moneyLeftAfterSecondTicket = moneyLeft - asciNumber1;
         counterTwo++;
       } else {
+        stop = true;
+        break;
+      }
+      if ((stop = true)) {
         break;
       }
     }
