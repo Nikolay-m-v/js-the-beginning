@@ -55,7 +55,9 @@ function travelAgency(input) {
   }
 
   let totalCostForStay = pricePerNight * days;
-  console.log(totalCostForStay);
+  console.log(
+    "The price is " + totalCostForStay.toFixed(2) + "lv! Have a nice time!"
+  );
 }
 
 travelAgency(["Borovets", "noEquipment", "yes", "6"]);
