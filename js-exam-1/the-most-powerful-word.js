@@ -1,6 +1,6 @@
 "use strict";
 
-// За Лора думите притежават голяма сила. Тя те моли да измислиш алгоритъм, с който да откриеш коя е "найсилната" дума.
+// За Лора думите притежават голяма сила. Тя те моли да измислиш алгоритъм, с който да откриеш коя е "най-силната" дума.
 //  До получаване на команда "End of words" ще се четат от конзолата думи. За да се открие
 // силата на всяка една, трябва да се намери сборът от ASCII стойностите на символите, от които се състои
 // думата. Ако започва с гласна буква - 'a', 'e', 'i', 'o', 'u', 'y' (или техните еквивалентни главни букви),
@@ -11,41 +11,52 @@ function mostPowerfulWord(input) {
   let index = 0;
   let command = input[index++];
   let shouldMultiply = false;
+  let shouldDivide = false;
   let strLength = 0;
+  let totalPoints = 0;
+  let winner = "";
 
   while (command !== "End of words") {
     let currentWord = command;
     let totalScore = 0;
-    for (let i = 0; i < command.length; i++) {
+    for (let i = 0; i < currentWord.length; i++) {
       let charLetter = currentWord[i];
       strLength = currentWord.toString().length;
       let num = charLetter.charCodeAt(0);
       totalScore += num;
+      let firstCharLetter = currentWord["0"];
+
       if (
-        currentWord[0] === "a" ||
-        currentWord[0] === "e" ||
-        currentWord[0] === "i" ||
-        currentWord[0] === "o" ||
-        currentWord[0] === "y" ||
-        currentWord[0] === "A" ||
-        currentWord[0] === "E" ||
-        currentWord[0] === "I" ||
-        currentWord[0] === "O" ||
-        currentWord[0] === "Y"
+        firstCharLetter === "a" ||
+        firstCharLetter === "e" ||
+        firstCharLetter === "i" ||
+        firstCharLetter === "o" ||
+        firstCharLetter === "y" ||
+        firstCharLetter === "A" ||
+        firstCharLetter === "E" ||
+        firstCharLetter === "I" ||
+        firstCharLetter === "O" ||
+        firstCharLetter === "Y"
       ) {
         shouldMultiply = true;
+      } else {
+        shouldDivide = true;
       }
     }
     if (shouldMultiply) {
-      let multipliedScore = totalScore * strLength;
-      console.log(multipliedScore);
-    } else {
-      let dividedScore = totalScore / strLength;
-      console.log(Math.floor(dividedScore));
+      totalScore = totalScore * strLength;
+    } else if (shouldDivide) {
+      totalScore = totalScore / strLength;
     }
 
+    if (totalScore > totalPoints) {
+      totalPoints = totalScore;
+      winner = currentWord;
+    }
     command = input[index++];
   }
+
+  console.log("The most powerful word is " + winner + " - " + totalPoints);
 }
 
 mostPowerfulWord([
@@ -55,5 +66,14 @@ mostPowerfulWord([
   "Word",
   "Is",
   "Experience",
+  "End of words",
+]);
+mostPowerfulWord([
+  "But",
+  "Some",
+  "People",
+  "Say",
+  "It's",
+  "LOVE",
   "End of words",
 ]);
