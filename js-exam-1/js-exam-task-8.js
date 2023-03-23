@@ -51,7 +51,7 @@ function cinemaVouchers(input) {
   console.log(counterTwo);
 }
 
-// cinemaVouchers(["300", "Captain Marvel", "popcorn", "Pepsi"]);
+// cinemaVouchers(["300", "Captain Marvel", "popcorn", "Pepsi", "End"]);
 cinemaVouchers([
   "1500",
   "Avengers: Endgame",
