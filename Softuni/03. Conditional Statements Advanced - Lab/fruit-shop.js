@@ -65,7 +65,7 @@ function fruitShop(input) {
   }
 
   let totalCost = amount * pricePerItem;
-  console.log(totalCost);
+  console.log(totalCost.toFixed(2));
 }
 
 fruitShop(["apple", "Tuesday", "2"]);
