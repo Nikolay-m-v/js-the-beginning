@@ -4,7 +4,7 @@ function backInTime(money, year) {
   let startingYear = 1800;
   let age = 18;
 
-  for (let i = 1800; i <= 1802; i++) {
+  for (let i = 1800; i <= year; i++) {
     if (i % 2 === 0) {
       money -= 12000;
     } else {
@@ -19,9 +19,11 @@ function backInTime(money, year) {
       )} dollars left.`
     );
   } else {
-    console.log(`He will need ${money.toFixed(2)} dollars to survive.`);
+    console.log(
+      `He will need ${Math.abs(money.toFixed(2))} dollars to survive.`
+    );
   }
 }
 
-backInTime(50000, 1802);
+// backInTime(50000, 1802);
 backInTime(100000.15, 1808);
