@@ -8,7 +8,6 @@ function monthlyExpenses(input) {
   let totalInternet = 0;
   let others = 0;
   let othersTotal = 0;
-  let paidForMonth = 0;
   let electricity = 0;
   let totalElectricity = 0;
 
